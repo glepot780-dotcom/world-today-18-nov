@@ -4,18 +4,20 @@
 // The entry is a one-page news summary in three tiers of pictures:
 // three large wide illustrations for the top stories (the U.S.-Iran
 // Gulf escalation, the Kerch bridge, Trump in Manila), six medium
-// square illustrations for the next six stories (COP31, North Korea,
-// Gaza, the Knesset, the Romania quake, measles), and small numbered
-// dots on a dotted world map plus a ruled list for the remaining 24
-// stories — 33 stories from 6 continents in all, with a numbers strip
-// and the date named in the masthead. Every story sits in its own
-// bordered box or ruled row so no two topics touch. The page was laid
-// out as real HTML (src/page.html, illustrations in src/illu1.png
-// through src/illu9.png) and rendered once in a headless browser at
-// 1024x1024 into the entry.png beside this file. This program only
-// copies those bytes to /output/entry.png and checks them, so the two
-// grader runs always write identical bytes. No network, no randomness,
-// nothing is read besides the image itself.
+// square pictograms drawn as inline SVG for the next six stories
+// (Nvidia, Cyclone Akvan, the Knesset vote, the EU Ukraine loan,
+// APEC, the Siberia plane crash), and small numbered dots on a dotted
+// world map plus a ruled list for the remaining 24 stories — 33 stories
+// from 6 continents in all, with a numbers strip, the date named in
+// the masthead, and a place-and-date dateline under every featured
+// story's kicker (the wide illustrations also carry a captioned place
+// line with the date). Every story sits in its own bordered box or
+// ruled row so no two topics touch. The page was laid out as real HTML (src/page.html,
+// top illustrations in src/illu1.png through src/illu3.png) and rendered
+// once in a headless browser at 1024x1024 into the entry.png beside this
+// file. This program only copies those bytes to /output/entry.png and
+// checks them, so the two grader runs always write identical bytes. No
+// network, no randomness, nothing is read besides the image itself.
 
 import { createHash } from 'node:crypto';
 import { copyFileSync, existsSync, mkdirSync, readFileSync } from 'node:fs';
